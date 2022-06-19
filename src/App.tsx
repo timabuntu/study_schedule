@@ -14,12 +14,18 @@ interface Lesson {
 }
 
 function App() {
-  const { data } = useQuery(GET_LESSONS_QUERY);
+  const { data } = useQuery<{ lessons: Lesson }>(GET_LESSONS_QUERY);
   console.log(data);
 
   return (
     <div className="App">
       <h1>Study Schedule</h1>
+
+      <ul>
+        {data?.lessons.map((lesson) => {
+          return <li key={lesson.id}>{lesson.title}</li>;
+        })}
+      </ul>
     </div>
   );
 }
