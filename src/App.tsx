@@ -8,6 +8,10 @@ const GET_LESSONS_QUERY = gql`
     }
   }
 `;
+interface Lesson {
+  id: string;
+  title: string;
+}
 
 function App() {
   const { data } = useQuery(GET_LESSONS_QUERY);
