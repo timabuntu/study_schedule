@@ -14,7 +14,7 @@ interface Lesson {
 }
 
 function App() {
-  const { data } = useQuery<{ lessons: Lesson }>(GET_LESSONS_QUERY);
+  const { data } = useQuery<{ lessons: Lesson[] }>(GET_LESSONS_QUERY);
   console.log(data);
 
   return (
