@@ -3,9 +3,9 @@ import { Sidebar } from "../components/Sidebar";
 
 export function Event() {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main>
+      <main className="flex flex-1">
         <Sidebar />
       </main>
     </div>
