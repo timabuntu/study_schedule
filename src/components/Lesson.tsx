@@ -12,7 +12,10 @@ export function Lesson(props: LessonProps) {
   const isLessonAvailable = isPast(props.availableAt);
   const availableDateFormatted = format(
     props.availableAt,
-    "EEEE' · 'd' de 'MMMM' · 'k'h'mm"
+    "EEEE' · 'd' de 'MMMM' · 'k'h'mm",
+    {
+      locale: ptBR,
+    }
   );
   return (
     <a href="#">
