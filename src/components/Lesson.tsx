@@ -9,10 +9,13 @@ interface LessonProps {
 
 export function Lesson(props: LessonProps) {
   const isLessonAvailable = isPast(props.availableAt);
-
+  const availableDateFormatted = format(
+    props.availableAt,
+    "EEEE' · 'd' de 'MMMM' · 'k'h'mm"
+  );
   return (
     <a href="#">
-      <span className="text-gray-300">{props.availableAt.toString()}</span>
+      <span className="text-gray-300">{availableDateFormatted}</span>
 
       <section className="p-4 mt-2 border border-gray-500 rounded">
         <header className="flex items-center justify-between">
