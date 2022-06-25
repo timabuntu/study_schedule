@@ -8,7 +8,7 @@ interface LessonProps {
 }
 
 export function Lesson(props: LessonProps) {
-  const isLessonAvailable = false;
+  const isLessonAvailable = isPast(props.availableAt);
 
   return (
     <a href="#">
