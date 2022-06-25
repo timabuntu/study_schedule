@@ -1,5 +1,5 @@
 import { CheckCircle, Lock } from "phosphor-react";
-import { isPast } from "date-fns";
+import { isPast, format } from "date-fns";
 interface LessonProps {
   title: string;
   slug: string;
