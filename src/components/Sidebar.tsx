@@ -24,8 +24,7 @@ interface GetLessonsQueryResponse {
 }
 
 export function Sidebar() {
-  const { data } = useQuery(GET_LESSONS_QUERY);
-  console.log(data);
+  const { data } = useQuery<GetLessonsQueryResponse>(GET_LESSONS_QUERY);
 
   return (
     <aside className="w-[348px] bg-gray-700 p-6 border-r border-gray-600">
@@ -34,12 +33,17 @@ export function Sidebar() {
       </span>
 
       <section className="flex flex-col gap-8 pt-8">
-        <Lesson
-          title="Aula 01"
-          slug="aula-01"
-          availableAt={new Date()}
-          type="class"
-        />
+        {data?.lessons.map((lesson) => {
+          return (
+            <Lesson
+              key={lesson.id}
+              title={lesson.title}
+              slug={lesson.slug}
+              availableAt={new Date(lesson.availableAt)}
+              type={lesson.lessonType}
+            />
+          );
+        })}
       </section>
     </aside>
   );
