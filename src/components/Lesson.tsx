@@ -1,5 +1,13 @@
 import { CheckCircle } from "phosphor-react";
-export function Lesson() {
+
+interface LessonProps {
+  title: string;
+  slug: string;
+  availableAt: Date;
+  type: "live | class";
+}
+
+export function Lesson(props: LessonProps) {
   return (
     <a href="#">
       <span className="text-gray-300">Terça · 22 de junho · 19h00</span>
@@ -15,7 +23,7 @@ export function Lesson() {
           </span>
         </header>
 
-        <strong className="block mt-5 text-gray-200">Docker é Vida</strong>
+        <strong className="block mt-5 text-gray-200">{props.title}</strong>
       </section>
     </a>
   );
