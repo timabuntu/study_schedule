@@ -13,6 +13,16 @@ const GET_LESSONS_QUERY = gql`
   }
 `;
 
+interface GetLessonsQueryResponse {
+  lessons: {
+    id: string;
+    title: string;
+    slug: string;
+    availableAt: string;
+    lessonType: "live" | "class";
+  }[];
+}
+
 export function Sidebar() {
   const { data } = useQuery(GET_LESSONS_QUERY);
   console.log(data);
