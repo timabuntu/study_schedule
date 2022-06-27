@@ -7,8 +7,8 @@ module.exports = {
         sans: 'Roboto, sans-serif',
       },
       colors: {
-        green: {
-          500: '#00875F',
+        blue: {
+          500: '#81D8F7',
         },
         orange: {
           500: '#FBA94C',
