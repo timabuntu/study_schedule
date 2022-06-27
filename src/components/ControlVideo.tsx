@@ -1,3 +1,3 @@
 export function ControlVideo() {
-  return <main>Control Player</main>;
+  return <div>Control Player</div>;
 }
