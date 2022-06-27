@@ -1,4 +1,9 @@
-import { GithubLogo } from 'phosphor-react';
+import {
+  CaretRight,
+  FileArrowDown,
+  FileCode,
+  GithubLogo,
+} from 'phosphor-react';
 import { ControlVideo } from './ControlVideo';
 import { NotionLogo } from './NotionLogo';
 
@@ -54,6 +59,45 @@ export function Video() {
             </a>
           </div>
         </header>
+        <div className='grid grid-cols-2 gap-8 mt-20'>
+          <a
+            href='#'
+            className='flex items-stretch gap-6 overflow-hidden transition-colors bg-gray-700 rounded hover:bg-gray-600'
+          >
+            <div className='flex items-center h-full p-6 text-gray-900 bg-yellow-200'>
+              <FileArrowDown size={40} />
+            </div>
+            <div className='py-6 leading-relaxed'>
+              <strong className='text-2xl'>Material de Referência</strong>
+              <p className='mt-2 text-sm text-gray-200'>
+                Acesse o material de referência para complementar o seu
+                desenvolvimento
+              </p>
+            </div>
+            <div className='flex items-center h-full p-6 '>
+              <CaretRight size={24} />
+            </div>
+          </a>
+
+          <a
+            href='#'
+            className='flex items-stretch gap-6 overflow-hidden transition-colors bg-gray-700 rounded hover:bg-gray-600'
+          >
+            <div className='flex items-center h-full p-6 text-gray-900 bg-yellow-200'>
+              <FileCode size={40} />
+            </div>
+            <div className='py-6 leading-relaxed'>
+              <strong className='text-2xl'>Material de Referência</strong>
+              <p className='mt-2 text-sm text-gray-200'>
+                Acesse o material de referência para complementar o seu
+                desenvolvimento
+              </p>
+            </div>
+            <div className='flex items-center h-full p-6 '>
+              <CaretRight size={24} />
+            </div>
+          </a>
+        </div>
       </section>
     </div>
   );
