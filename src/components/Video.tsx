@@ -1,4 +1,6 @@
+import { GithubLogo } from 'phosphor-react';
 import { ControlVideo } from './ControlVideo';
+import { NotionLogo } from './NotionLogo';
 
 export function Video() {
   return (
@@ -38,15 +40,17 @@ export function Video() {
           <div className='flex flex-col gap-4'>
             <a
               href='#'
-              className='px-6 py-4 text-sm font-bold text-gray-700 uppercase transition-colors bg-yellow-200 rounded hover:bg-yellow-300 hover:text-black'
+              className='flex items-center justify-center gap-2 px-6 py-4 text-sm font-bold text-gray-700 uppercase transition-colors bg-yellow-200 rounded hover:border-yellow-200 hover:bg-transparent hover:text-yellow-200 hover:border hover:py-[15px]'
             >
-              Faça sua Anotação
+              <NotionLogo />
+              Acesse o Notion
             </a>
             <a
               href='#'
-              className='px-6 py-4 text-sm font-bold text-yellow-200 uppercase border border-yellow-200 rounded'
+              className='flex items-center gap-2 px-6 py-4 text-sm font-bold text-gray-900 uppercase transition-colors bg-blue-500 border border-blue-500 rounded hover:bg-transparent hover:text-blue-500'
             >
-              Web Developer
+              <GithubLogo weight='fill' size={24} />
+              Repositório da Aula
             </a>
           </div>
         </header>
