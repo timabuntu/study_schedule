@@ -24,7 +24,7 @@ export function Lesson(props: LessonProps) {
       <section className='p-4 mt-2 border border-gray-500 rounded'>
         <header className='flex items-center justify-between'>
           {isLessonAvailable ? (
-            <span className='flex items-center gap-2 text-sm font-medium text-green-500'>
+            <span className='flex items-center gap-2 text-sm font-medium text-blue-500'>
               <CheckCircle size={20} />
               Conteúdo liberado
             </span>
@@ -34,7 +34,7 @@ export function Lesson(props: LessonProps) {
               Em breve
             </span>
           )}
-          <span className='text-xs rounded py-[0.125rem] px-2 text-white border border-blue-300 font-bold'>
+          <span className='text-xs rounded py-[0.125rem] px-2 text-white border border-yellow-300 font-bold'>
             {props.type === 'live' ? 'CHEGA AÍ' : 'AULA PRÁTICA'}
           </span>
         </header>
