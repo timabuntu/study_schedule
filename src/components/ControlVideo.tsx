@@ -1,3 +1,7 @@
 export function ControlVideo() {
-  return <div>Control Video</div>;
+  return (
+    <main className='h-full w-full max-w-[1100px] max-h-[60vh] aspect-video'>
+      Control Player
+    </main>
+  );
 }
