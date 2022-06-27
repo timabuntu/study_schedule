@@ -1,7 +1,13 @@
+import { ControlVideo } from './ControlVideo';
+
 export function Video() {
   return (
     <div className='flex-1'>
-      <section className='bg-black'>Control Player</section>
+      <section className='bg-black'>
+        <main>
+          <ControlVideo />
+        </main>
+      </section>
       <section className='p-8 mx-auto bg-blue-600 max-w-[1100px]'>
         <header className='flex items-start gap-16'>
           <div className='bg-pink-500'>
