@@ -1,9 +1,9 @@
-import { Header } from "./components/Header";
-import { Event } from "./pages/Event";
+import { Header } from './components/Header';
+import { Event } from './pages/Event';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Event />
     </div>
   );
