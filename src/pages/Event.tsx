@@ -4,13 +4,13 @@ import { Sidebar } from '../components/Sidebar';
 import { Video } from '../components/Video';
 
 export function Event() {
-  const {} = useParams;
+  const { slug } = useParams<{ slug: string }>();
   return (
     <div className='flex flex-col min-h-screen'>
       <Header />
       <main className='flex flex-1'>
         <Sidebar />
-        <Video />
+        {slug ? <Video /> : <div className='flex-1' />}
       </main>
     </div>
   );
