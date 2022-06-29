@@ -18,10 +18,10 @@ export function Lesson(props: LessonProps) {
     }
   );
   return (
-    <a href='#'>
+    <a href='#' className='group'>
       <span className='text-gray-300'>{availableDateFormatted}</span>
 
-      <section className='p-4 mt-2 border border-gray-500 rounded'>
+      <section className='p-4 mt-2 border border-gray-500 rounded group-hover:border-yellow-200'>
         <header className='flex items-center justify-between'>
           {isLessonAvailable ? (
             <span className='flex items-center gap-2 text-sm font-medium text-blue-500'>
