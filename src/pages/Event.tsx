@@ -3,6 +3,10 @@ import { Header } from '../components/Header';
 import { Sidebar } from '../components/Sidebar';
 import { Video } from '../components/Video';
 
+interface VideoProps {
+  lessonSlug: string;
+}
+
 export function Event() {
   const { slug } = useParams<{ slug: string }>();
   return (
@@ -10,7 +14,7 @@ export function Event() {
       <Header />
       <main className='flex flex-1'>
         <Sidebar />
-        {slug ? <Video /> : <div className='flex-1' />}
+        {slug ? <Video lessonSlug={slug} /> : <div className='flex-1' />}
       </main>
     </div>
   );
