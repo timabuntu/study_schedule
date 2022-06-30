@@ -1,3 +1,4 @@
+import { gql, useQuery } from '@apollo/client';
 import {
   CaretRight,
   FileArrowDown,
@@ -7,37 +8,78 @@ import {
 import { ControlVideo } from './ControlVideo';
 import { NotionLogo } from './NotionLogo';
 
-export function Video() {
+const GET_LESSON_BY_SLUG_QUERY = gql`
+  query GetLessonBySlug($slug: String) {
+    lesson(where: { slug: $slug }) {
+      title
+      videoId
+      description
+      teacher {
+        bio
+        avatarURL
+        name
+      }
+    }
+  }
+`;
+interface GetLessonBySlugResponse {
+  lesson: {
+    title: string;
+    videoId: string;
+    description: string;
+    teacher: {
+      bio: string;
+      avatarURL: string;
+      name: string;
+    };
+  };
+}
+interface VideoProps {
+  lessonSlug: string;
+}
+
+export function Video(props: VideoProps) {
+  const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG_QUERY, {
+    variables: {
+      slug: props.lessonSlug,
+    },
+  });
+
+  if (!data) {
+    return (
+      <div className='flex-1 '>
+        <p>Carregando...</p>
+      </div>
+    );
+  }
+  console.log(data);
   return (
     <div className='flex-1'>
       <section className='flex justify-center bg-black'>
         <main className='h-full w-full max-w-[1100px] max-h-[60vh] aspect-video'>
-          <ControlVideo />
+          <ControlVideo lessonVideoId={data.lesson.videoId} />
         </main>
       </section>
       <section className='p-8 mx-auto  max-w-[1100px]'>
         <header className='flex items-start gap-16'>
           <div className='flex-1'>
-            <h1 className='text-2xl font-bold'>
-              Aula 01 - Início do Estudo de Docker
-            </h1>
+            <h1 className='text-2xl font-bold'>{data.lesson.title}</h1>
             <p className='mt-4 leading-relaxed text-gray-200'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-              rerum accusantium est tempore soluta eligendi, laboriosam ut
-              dolorem quod quis, illum cum, porro quam. Culpa delectus nesciunt
-              qui est autem.
+              {data.lesson.description}
             </p>
             <div className='flex items-center gap-4 mt-6'>
               <img
                 className='w-16 h-16 border-2 border-blue-500 rounded-full'
-                src='https://github.com/timabuntu.png'
+                src={data.lesson.teacher.avatarURL}
                 alt='foto do Instrutor'
               />
               <div>
                 <strong className='block text-2xl font-bold'>
-                  Thiago lopes de Mello
+                  {data.lesson.teacher.name}
                 </strong>
-                <span className='text-sm text-gray-200'>Web Developer</span>
+                <span className='text-sm text-gray-200'>
+                  {data.lesson.teacher.bio}
+                </span>
               </div>
             </div>
           </div>
