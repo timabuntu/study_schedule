@@ -1,10 +1,15 @@
 import { DefaultUi, Player, Youtube } from '@vime/react';
 
 import '@vime/core/themes/default.css';
-export function ControlVideo() {
+
+interface ControlVideoProps {
+  lessonVideoId: string;
+}
+
+export function ControlVideo(props: ControlVideoProps) {
   return (
     <Player>
-      <Youtube videoId='qZevFPMtQho' />
+      <Youtube videoId={props.lessonVideoId} />
       <DefaultUi />
     </Player>
   );
