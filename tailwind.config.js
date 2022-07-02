@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        sun: "url('src/assets/sun-tornado.svg')",
+        bullseye: "url('src/assets/bullseye.svg')",
       },
       fontFamily: {
         sans: 'Roboto, sans-serif',
