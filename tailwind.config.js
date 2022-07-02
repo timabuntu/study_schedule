@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.tsx'],
   theme: {
     extend: {
+      backgroundImage: {
+        sun: "url('src/assets/sun-tornado.svg')",
+      },
       fontFamily: {
         sans: 'Roboto, sans-serif',
       },
