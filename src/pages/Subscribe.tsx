@@ -8,6 +8,11 @@ export function Subscribe() {
           <Logo />
         </div>
       </main>
+      <img
+        src='/src/assets/developer-doing-programming.webp'
+        className='mt-10'
+        alt=''
+      />
     </div>
   );
 }
