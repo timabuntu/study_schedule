@@ -16,6 +16,7 @@ export function Subscribe() {
           </p>
         </div>
       </main>
+
       <img
         src='/src/assets/developer-doing-programming.webp'
         className='mt-10'
