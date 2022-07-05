@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.tsx'],
   theme: {
     extend: {
+      backgroundImage: {
+        bullseye: "url('src/assets/bullseye.svg')",
+      },
       fontFamily: {
         sans: 'Roboto, sans-serif',
       },
