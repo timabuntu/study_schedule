@@ -6,7 +6,7 @@ export function Subscribe() {
       <div className='mt-4'>
         <Logo />
       </div>
-      <main className='max-w-[1100px] flex items-center  mx-auto mt-16 justify-between'>
+      <main className='w-full max-w-[1100px] flex items-center  mx-auto mt-16 justify-between'>
         <div className='max-w-[640px]'>
           <h1 className='mt-8 text-[2.5rem] leading-tight'>
             Agende seu estudo, e suas{' '}
