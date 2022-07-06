@@ -17,7 +17,9 @@ export function Subscribe() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  const [createSubscriber] = useMutation(CREATE_SUBSCRIBER_MUTATION);
+  const [createSubscriber, { loading }] = useMutation(
+    CREATE_SUBSCRIBER_MUTATION
+  );
 
   async function handleSubscribe(event: FormEvent) {
     event.preventDefault();
@@ -73,7 +75,8 @@ export function Subscribe() {
 
             <button
               type='submit'
-              className='py-4 mt-4 text-sm font-bold text-gray-700 uppercase transition-colors bg-yellow-400 rounded hover:bg-yellow-200'
+              disabled={loading}
+              className='py-4 mt-4 text-sm font-bold text-gray-700 uppercase transition-colors bg-yellow-400 rounded hover:bg-yellow-200 disabled:opacity-50'
             >
               Garantir minha inscrição
             </button>
