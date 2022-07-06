@@ -27,7 +27,7 @@ export function Lesson(props: LessonProps) {
           {isLessonAvailable ? (
             <span className='flex items-center gap-2 text-sm font-medium text-blue-500'>
               <CheckCircle size={20} />
-              Conteúdo l iberado
+              Conteúdo liberado
             </span>
           ) : (
             <span className='flex items-center gap-2 text-sm font-medium text-orange-500'>
@@ -36,7 +36,7 @@ export function Lesson(props: LessonProps) {
             </span>
           )}
           <span className='text-xs rounded py-[3px] px-2 text-white border border-yellow-200 font-bold'>
-            {props.type === 'live' ? 'CHEGA AÍ' : 'AULA PRÁTICA'}
+            {props.type === 'live' ? 'AULA TEÓRICA' : 'AULA PRÁTICA'}
           </span>
         </header>
 
