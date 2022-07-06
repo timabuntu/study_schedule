@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import { Logo } from '../components/Logo';
 
 export function Subscribe() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
   return (
     <div className='flex flex-col items-center min-h-screen bg-no-repeat bg-cover bg-bullseye'>
       <div className='mt-4'>
@@ -27,11 +31,15 @@ export function Subscribe() {
               className='px-5 bg-gray-700 rounded h-14'
               type='text'
               placeholder='Seu nome completo'
+              onChange={(event) => setName(event.target.value)}
+              name={name}
             />
             <input
               className='px-5 bg-gray-700 rounded h-14'
               type='email'
               placeholder='Digite seu e-mail'
+              onChange={(event) => setEmail(event.target.value)}
+              name={email}
             />
 
             <button
