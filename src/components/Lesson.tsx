@@ -30,12 +30,20 @@ export function Lesson(props: LessonProps) {
 
       <section
         className={`p-4 mt-2 border border-gray-500 rounded group-hover:border-yellow-200 ${
-          isActiveLesson ? ' border border-yellow-200' : ''
+          isActiveLesson ? 'bg-yellow-200' : ''
         }`}
       >
         <header className='flex items-center justify-between'>
           {isLessonAvailable ? (
-            <span className='flex items-center gap-2 text-sm font-medium text-blue-500'>
+            <span
+              className={classnames(
+                'flex items-center gap-2 text-sm font-medium ',
+                {
+                  'text-gray-700': isActiveLesson,
+                  'text-blue-500': !isActiveLesson,
+                }
+              )}
+            >
               <CheckCircle size={20} />
               Conteúdo liberado
             </span>
@@ -45,12 +53,26 @@ export function Lesson(props: LessonProps) {
               Em breve
             </span>
           )}
-          <span className='text-xs rounded py-[3px] px-2 text-white border border-yellow-200 font-bold'>
+          <span
+            className={classnames(
+              'text-xs rounded py-[3px] px-2 text-white border border-yellow-200 font-bold',
+              {
+                'border border-gray-700': isActiveLesson,
+                'text-gray-700': isActiveLesson,
+              }
+            )}
+          >
             {props.type === 'live' ? 'AULA TEÓRICA' : 'AULA PRÁTICA'}
           </span>
         </header>
 
-        <strong className='block mt-5 text-gray-200'>{props.title}</strong>
+        <strong
+          className={classnames('block mt-5 text-gray-200', {
+            'text-gray-500': isActiveLesson,
+          })}
+        >
+          {props.title}
+        </strong>
       </section>
     </Link>
   );
