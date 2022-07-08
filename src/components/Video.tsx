@@ -5,6 +5,7 @@ import {
   FileCode,
   GithubLogo,
 } from 'phosphor-react';
+import { useGetLessonBySlugQuery } from '../graphql/generated';
 import { ControlVideo } from './ControlVideo';
 import { NotionLogo } from './NotionLogo';
 
@@ -13,20 +14,20 @@ interface VideoProps {
 }
 
 export function Video(props: VideoProps) {
-  const { data } = useQuery<GetLessonBySlugResponse>(GET_LESSON_BY_SLUG_QUERY, {
+  const { data } = useGetLessonBySlugQuery({
     variables: {
       slug: props.lessonSlug,
     },
   });
 
-  if (!data) {
+  if (!data || !data.lesson) {
     return (
       <div className='flex-1 '>
         <p>Carregando...</p>
       </div>
     );
   }
-  console.log(data);
+
   return (
     <div className='flex-1'>
       <section className='flex justify-center bg-black'>
