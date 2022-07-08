@@ -58,7 +58,7 @@ export function Lesson(props: LessonProps) {
               'text-xs rounded py-[3px] px-2 text-white border border-yellow-200 font-bold',
               {
                 'border border-gray-700': isActiveLesson,
-                'text-gray-700': isActiveLesson,
+                'text-gray-900': isActiveLesson,
               }
             )}
           >
